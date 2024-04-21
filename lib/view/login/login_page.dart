@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:stacked/stacked.dart';
 import 'package:staked_demo/app/app.router.dart';
-import 'package:staked_demo/login_view_model.dart';
+import 'package:staked_demo/view/login/login_view_model.dart';
 
 class LoginPage extends StackedView<LoginViewModel> {
 

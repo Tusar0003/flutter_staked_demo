@@ -3,8 +3,8 @@ import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:staked_demo/app/app.locator.dart';
 import 'package:staked_demo/app/app.router.dart';
-import 'package:staked_demo/home_page.dart';
-import 'package:staked_demo/login_page.dart';
+import 'package:staked_demo/view/home/home_page.dart';
+import 'package:staked_demo/view/login/login_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

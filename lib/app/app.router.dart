@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:staked_demo/home_page.dart';
-import 'package:staked_demo/login_page.dart';
+import 'package:staked_demo/view/home/home_page.dart';
+import 'package:staked_demo/view/login/login_page.dart';
 
 class Routes {
   static const String login = '/';
@@ -9,6 +9,7 @@ class Routes {
 }
 
 class StackedRouter extends RouterBase {
+
   @override
   List<RouteDef> get routes => _routes;
 

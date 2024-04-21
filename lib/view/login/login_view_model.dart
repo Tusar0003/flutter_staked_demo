@@ -3,6 +3,8 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:staked_demo/app/app.locator.dart';
 import 'package:staked_demo/app/app.router.dart';
+import 'package:staked_demo/data/login_repository.dart';
+import 'package:staked_demo/domain/login_use_case.dart';
 
 class LoginViewModel extends BaseViewModel {
 
@@ -13,13 +15,14 @@ class LoginViewModel extends BaseViewModel {
 
   login() async {
     setBusy(true);
-    await Future.delayed(
-      const Duration(
-        seconds: 3
-      )
-    );
+
+    // LoginRepository loginRepository = locator.get<LoginRepository>();
+    // bool isLoggedIn = await loginRepository.login();
+    LoginUseCase loginUseCase = locator.get<LoginUseCase>();
+    bool isLoggedIn = await loginUseCase.call();
+
     setBusy(false);
-    return true;
+    return isLoggedIn;
   }
 
   navigateToHome() {

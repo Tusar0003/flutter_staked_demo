@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:stacked/stacked.dart';
-import 'package:staked_demo/home_view_model.dart';
+import 'package:staked_demo/view/home/home_view_model.dart';
 
 
 class MyHomePage extends StackedView<HomeViewModel> {
