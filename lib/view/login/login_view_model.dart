@@ -9,18 +9,15 @@ import 'package:staked_demo/domain/login_use_case.dart';
 class LoginViewModel extends BaseViewModel {
 
   final BuildContext _context;
-  final _navigationService = locator<NavigationService>();
+  // final LoginUseCase _loginUseCase;
+  final _navigationService = getIt<NavigationService>();
 
   LoginViewModel(this._context);
 
   login() async {
     setBusy(true);
-
-    // LoginRepository loginRepository = locator.get<LoginRepository>();
-    // bool isLoggedIn = await loginRepository.login();
-    LoginUseCase loginUseCase = locator.get<LoginUseCase>();
+    LoginUseCase loginUseCase = getIt<LoginUseCase>();
     bool isLoggedIn = await loginUseCase.call();
-
     setBusy(false);
     return isLoggedIn;
   }

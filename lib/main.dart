@@ -8,7 +8,7 @@ import 'package:staked_demo/view/login/login_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await setupLocator();
+  configureDependencies();
   runApp(const MyApp());
 }
 

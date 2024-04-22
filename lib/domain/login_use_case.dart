@@ -1,10 +1,14 @@
-import 'package:staked_demo/app/app.locator.dart';
+import 'package:injectable/injectable.dart';
 import 'package:staked_demo/data/login_repository.dart';
 
+@injectable
 class LoginUseCase {
 
+  final LoginRepository _loginRepository;
+
+  LoginUseCase(this._loginRepository);
+
   call() async {
-    LoginRepository loginRepository = locator.get<LoginRepository>();
-    return await loginRepository.login();
+    return await _loginRepository.login();
   }
 }

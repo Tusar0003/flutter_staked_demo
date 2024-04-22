@@ -1,18 +1,16 @@
 import 'package:get_it/get_it.dart';
-import 'package:stacked/stacked_annotations.dart';
+import 'package:injectable/injectable.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:staked_demo/data/login_repository.dart';
-import 'package:staked_demo/domain/login_use_case.dart';
+import 'package:staked_demo/app/app.locator.config.dart';
 
-// final locator = StackedLocator.instance;
-final GetIt locator = GetIt.instance;
+final getIt = GetIt.instance;
 
-setupLocator({String? environment, EnvironmentFilter? environmentFilter}) {
-  // Register environments using StackedLocator
-  // locator.registerEnvironment(environment: environment, environmentFilter: environmentFilter);
-
-  // Register dependencies
-  locator.registerLazySingleton(() => NavigationService());
-  locator.registerLazySingleton(() => LoginUseCase());
-  locator.registerLazySingleton(() => LoginRepository());
+@InjectableInit(
+  initializerName: 'init', // default
+  preferRelativeImports: true, // default
+  asExtension: true, // default
+)
+void configureDependencies() {
+  getIt.init();
+  getIt.registerLazySingleton(() => NavigationService());
 }
