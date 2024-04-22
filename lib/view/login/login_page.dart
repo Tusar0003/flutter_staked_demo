@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:stacked/stacked.dart';
+import 'package:staked_demo/app/app.locator.dart';
 import 'package:staked_demo/app/app.router.dart';
+import 'package:staked_demo/domain/login_use_case.dart';
 import 'package:staked_demo/view/login/login_view_model.dart';
 
 class LoginPage extends StackedView<LoginViewModel> {
@@ -19,6 +21,9 @@ class LoginPage extends StackedView<LoginViewModel> {
           onPressed: () async {
             bool isLoggedIn = await viewModel.login();
             // isLoggedIn ? Navigator.pushNamed(context, AppRouter.home, arguments: 'Home Page') : null;
+
+            // LoginViewModel loginViewModel = getIt<LoginViewModel>();
+            // bool isLoggedIn = await loginViewModel.login();
             isLoggedIn ? viewModel.navigateToHome() : null;
           },
         ),
@@ -28,6 +33,7 @@ class LoginPage extends StackedView<LoginViewModel> {
 
   @override
   LoginViewModel viewModelBuilder(BuildContext context) {
-    return LoginViewModel(context);
+    // return LoginViewModel(context);
+    return LoginViewModel();
   }
 }
